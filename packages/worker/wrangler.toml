@@ -1,0 +1,12 @@
+name = "worker"
+type = "webpack"
+account_id = '721b2de088d34f6738e630a082a345d7'
+route = ''
+zone_id = ''
+usage_model = ''
+compatibility_flags = []
+workers_dev = true
+compatibility_date = "2022-11-12"
+
+[miniflare]
+upstream = "http://localhost:3000/" ## --upstream

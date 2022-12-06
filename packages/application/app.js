@@ -7,6 +7,7 @@ const app = fastify();
 app.get("/", async (request, response) => {
 	const permission = Number(request.headers[PERMISSION_HEADER] ?? 0);
 	response.header("Content-Type", "text/html");
+	response.header("Vary", PERMISSION_HEADER);
 
 	if (permission === 0) {
 		return response.send(buildBody("<p>you have no permission!!</p>"));
@@ -28,7 +29,7 @@ app.get("/", async (request, response) => {
 
 	message += "</ul>";
 
-	response.send(message);
+	response.send(buildBody(message));
 });
 
 const buildBody = function (message) {
